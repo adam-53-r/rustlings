@@ -21,10 +21,9 @@ fn main() {
     }
 
     let mut results = Vec::new();
-    for handle in handles {
-        // TODO: Collect the results of all threads into the `results` vector.
-        // Use the `JoinHandle` struct which is returned by `thread::spawn`.
-    }
+    // TODO: Collect the results of all threads into the `results` vector.
+    // Use the `JoinHandle` struct which is returned by `thread::spawn`.
+    results = handles.into_iter().filter_map(|h| h.join().ok()).collect();
 
     if results.len() != 10 {
         panic!("Oh no! Some thread isn't done yet!");
