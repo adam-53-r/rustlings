@@ -19,8 +19,5 @@
   #  rustfmt.enable = true;
   #  clippy.enable = true;
   # };
-  
-  enterShell = ''
-    exec fish
-  '';
+
 }
